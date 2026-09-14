@@ -54,16 +54,29 @@ ConvFusion 将这些关系保存在工作区内的 Markdown 和结构化元数�
 
 ## 安装
 
-从 GitHub 获取源码：
+将 GitHub 仓库添加为 Codex Marketplace，然后安装插件：
+
+```bash
+codex plugin marketplace add QuantumHW/ConvFusion-codex --ref main
+codex plugin add convfusion-codex@convfusion
+```
+
+安装完成后，重新打开 Codex 或创建一个新任务。插件自带本地 MCP 配置，无需单独部署服务。
+
+更新 Marketplace 快照：
+
+```bash
+codex plugin marketplace upgrade convfusion
+```
+
+如需参与开发，可以克隆源码并进入插件目录：
 
 ```bash
 git clone https://github.com/QuantumHW/ConvFusion-codex.git
-cd ConvFusion-codex
+cd ConvFusion-codex/plugins/convfusion-codex
 ```
 
-当前首个版本以源码仓库形式发布。将仓库根目录作为本地 Codex 插件源安装；插件入口为 `.codex-plugin/plugin.json`，无需单独部署 MCP 服务。
-
-如果项目通过 Codex Marketplace 发布，可按照对应 Marketplace 页面或 Release 说明直接安装。建议使用带版本号的 Git tag 或 GitHub Release，以获得可复现的插件版本。
+建议优先使用带版本号的 Git tag 或 GitHub Release，以获得可复现的插件版本。
 
 ## 快速开始
 
@@ -121,18 +134,20 @@ Codex
     └── 调用 ConvFusion Core，维护确定性研究资产
 ```
 
-仓库中的主要目录：
+仓库采用 Codex Marketplace 布局：
 
 ```text
 .
-├── .codex-plugin/plugin.json        # Codex 插件清单
-├── .mcp.json                        # 本地 STDIO MCP 配置
-├── skills/convfusion-research/
-│   ├── SKILL.md                     # 总控科研 Skill
-│   └── references/                  # 50 份科研方法参考
-├── scripts/convfusion-mcp.mjs       # Codex MCP 适配器
-├── lib/research/                    # 编译后的科研领域 Core
-└── src/                             # TypeScript 源码及兼容代码
+├── .agents/plugins/marketplace.json # Marketplace 清单
+└── plugins/convfusion-codex/
+    ├── .codex-plugin/plugin.json    # Codex 插件清单
+    ├── .mcp.json                    # 本地 STDIO MCP 配置
+    ├── skills/convfusion-research/
+    │   ├── SKILL.md                 # 总控科研 Skill
+    │   └── references/              # 50 份科研方法参考
+    ├── scripts/convfusion-mcp.mjs   # Codex MCP 适配器
+    ├── lib/research/                # 编译后的科研领域 Core
+    └── src/                         # TypeScript 源码及兼容代码
 ```
 
 ## 开发与验证
@@ -201,7 +216,7 @@ npm run verify:codex
 
 ## 来源与兼容性
 
-`src/index.ts`、`src/client/` 和 `cordis.patch.yml` 保留了上游 DSH Adapter，便于维护共享 Core 或继续探索双宿主兼容。Codex 不加载这些入口；Codex 的实际入口是 `.codex-plugin/plugin.json`、`skills/` 和 `.mcp.json`。
+`plugins/convfusion-codex/src/index.ts`、`src/client/` 和 `cordis.patch.yml` 保留了上游 DSH Adapter，便于维护共享 Core 或继续探索双宿主兼容。Codex 不加载这些入口；Codex 的实际入口是插件目录中的 `.codex-plugin/plugin.json`、`skills/` 和 `.mcp.json`。
 
 原始项目：[ConvFusion/ConvFusion-dsh](https://github.com/ConvFusion/ConvFusion-dsh)
 

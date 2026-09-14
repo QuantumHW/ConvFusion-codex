@@ -1,0 +1,20 @@
+{
+  "name": "convfusion",
+  "interface": {
+    "displayName": "ConvFusion"
+  },
+  "plugins": [
+    {
+      "name": "convfusion-codex",
+      "source": {
+        "source": "local",
+        "path": "./plugins/convfusion-codex"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

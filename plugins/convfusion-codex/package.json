@@ -30,9 +30,7 @@
     "assets",
     "lib",
     "skills",
-    "scripts/convfusion-mcp.mjs",
-    "README.md",
-    "LICENSE"
+    "scripts/convfusion-mcp.mjs"
   ],
   "scripts": {
     "build": "npm run build:host && npm run build:client",
