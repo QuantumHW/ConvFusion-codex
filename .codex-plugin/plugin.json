@@ -3,11 +3,11 @@
   "version": "0.3.0",
   "description": "Evidence-first research workflows, methods, and traceable research assets for Codex.",
   "author": {
-    "name": "ConvFusion",
-    "url": "https://github.com/ConvFusion"
+    "name": "QuantumHW",
+    "url": "https://github.com/QuantumHW"
   },
-  "homepage": "https://github.com/ConvFusion/ConvFusion-dsh",
-  "repository": "https://github.com/ConvFusion/ConvFusion-dsh",
+  "homepage": "https://github.com/QuantumHW/ConvFusion-codex",
+  "repository": "https://github.com/QuantumHW/ConvFusion-codex",
   "license": "Apache-2.0",
   "keywords": ["research", "evidence", "academic-writing", "codex", "mcp"],
   "skills": "./skills/",
@@ -16,10 +16,10 @@
     "displayName": "ConvFusion Research",
     "shortDescription": "Evidence-first research workflows for Codex",
     "longDescription": "A local-first research operating layer for Codex with research methods, plans, evidence, claims, decisions, paper evolution, and deterministic workspace tools.",
-    "developerName": "ConvFusion",
+    "developerName": "QuantumHW",
     "category": "Productivity",
     "capabilities": ["Research", "Local MCP", "Write", "Academic workflows"],
-    "websiteURL": "https://github.com/ConvFusion/ConvFusion-dsh",
+    "websiteURL": "https://github.com/QuantumHW/ConvFusion-codex",
     "brandColor": "#3157A4",
     "composerIcon": "./assets/favicon.svg",
     "logo": "./assets/favicon.svg",

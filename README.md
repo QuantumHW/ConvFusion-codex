@@ -57,11 +57,11 @@ ConvFusion 将这些关系保存在工作区内的 Markdown 和结构化元数�
 从 GitHub 获取源码：
 
 ```bash
-git clone https://github.com/ConvFusion/ConvFusion-codex.git
+git clone https://github.com/QuantumHW/ConvFusion-codex.git
 cd ConvFusion-codex
 ```
 
-将仓库根目录作为本地 Codex 插件源安装。插件入口为 `.codex-plugin/plugin.json`，无需单独部署 MCP 服务。
+当前首个版本以源码仓库形式发布。将仓库根目录作为本地 Codex 插件源安装；插件入口为 `.codex-plugin/plugin.json`，无需单独部署 MCP 服务。
 
 如果项目通过 Codex Marketplace 发布，可按照对应 Marketplace 页面或 Release 说明直接安装。建议使用带版本号的 Git tag 或 GitHub Release，以获得可复现的插件版本。
 
@@ -204,6 +204,8 @@ npm run verify:codex
 `src/index.ts`、`src/client/` 和 `cordis.patch.yml` 保留了上游 DSH Adapter，便于维护共享 Core 或继续探索双宿主兼容。Codex 不加载这些入口；Codex 的实际入口是 `.codex-plugin/plugin.json`、`skills/` 和 `.mcp.json`。
 
 原始项目：[ConvFusion/ConvFusion-dsh](https://github.com/ConvFusion/ConvFusion-dsh)
+
+Codex 移植版：[QuantumHW/ConvFusion-codex](https://github.com/QuantumHW/ConvFusion-codex)
 
 ## 许可证
 
