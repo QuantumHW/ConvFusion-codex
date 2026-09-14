@@ -1,0 +1,32 @@
+{
+  "name": "convfusion-codex",
+  "version": "0.3.0",
+  "description": "Evidence-first research workflows, methods, and traceable research assets for Codex.",
+  "author": {
+    "name": "ConvFusion",
+    "url": "https://github.com/ConvFusion"
+  },
+  "homepage": "https://github.com/ConvFusion/ConvFusion-dsh",
+  "repository": "https://github.com/ConvFusion/ConvFusion-dsh",
+  "license": "Apache-2.0",
+  "keywords": ["research", "evidence", "academic-writing", "codex", "mcp"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "ConvFusion Research",
+    "shortDescription": "Evidence-first research workflows for Codex",
+    "longDescription": "A local-first research operating layer for Codex with research methods, plans, evidence, claims, decisions, paper evolution, and deterministic workspace tools.",
+    "developerName": "ConvFusion",
+    "category": "Productivity",
+    "capabilities": ["Research", "Local MCP", "Write", "Academic workflows"],
+    "websiteURL": "https://github.com/ConvFusion/ConvFusion-dsh",
+    "brandColor": "#3157A4",
+    "composerIcon": "./assets/favicon.svg",
+    "logo": "./assets/favicon.svg",
+    "defaultPrompt": [
+      "Start an evidence-first research project in this workspace.",
+      "Assess this research project's current state and next gap.",
+      "Turn these results into traceable evidence and claims."
+    ]
+  }
+}

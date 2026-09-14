@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "convfusion": {
+      "command": "node",
+      "args": ["./scripts/convfusion-mcp.mjs"],
+      "cwd": ".",
+      "env_vars": ["OPENALEX_API_KEY", "OPENALEX_MAILTO"],
+      "startup_timeout_sec": 20,
+      "tool_timeout_sec": 180
+    }
+  }
+}

@@ -1,0 +1,13 @@
+interface:
+  display_name: "ConvFusion Research"
+  short_description: "Evidence-first research workflows and assets"
+  icon_small: "assets/favicon.svg"
+  icon_large: "assets/favicon.svg"
+  brand_color: "#3157A4"
+  default_prompt: "Use ConvFusion to assess and advance this research project."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "convfusion"
+      description: "Local ConvFusion research asset tools"
+      transport: "stdio"
