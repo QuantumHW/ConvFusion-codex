@@ -7,6 +7,7 @@ import { join } from 'node:path'
 import { handleRequest } from './convfusion-mcp.mjs'
 
 const temp = await mkdtemp(join(tmpdir(), 'convfusion-codex-'))
+const packageInfo = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8'))
 
 try {
   const initialized = await handleRequest({
@@ -16,6 +17,7 @@ try {
     params: { protocolVersion: '2025-06-18' },
   })
   assert.equal(initialized.result.serverInfo.name, 'convfusion-codex')
+  assert.equal(initialized.result.serverInfo.version, packageInfo.version)
 
   const listed = await handleRequest({ jsonrpc: '2.0', id: 2, method: 'tools/list' })
   const names = listed.result.tools.map((tool) => tool.name)

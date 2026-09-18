@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import { readFileSync } from 'node:fs'
 import { isAbsolute, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { defineResearchTools } from '../lib/research/research-tools.js'
@@ -25,7 +26,11 @@ import {
   setPlanStatus,
 } from '../lib/research/plan-library.js'
 
-const SERVER_INFO = { name: 'convfusion-codex', version: '0.3.0' }
+const packageInfo = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'))
+if (typeof packageInfo.name !== 'string' || typeof packageInfo.version !== 'string') {
+  throw new Error('package.json must define string name and version fields')
+}
+const SERVER_INFO = Object.freeze({ name: packageInfo.name, version: packageInfo.version })
 
 function objectSchema(properties, required = []) {
   return { type: 'object', properties, required, additionalProperties: false }

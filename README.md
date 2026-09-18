@@ -1,10 +1,22 @@
-# ConvFusion for Codex
+<p align="center">
+  <img src="./plugins/convfusion-codex/assets/favicon.svg" width="200" alt="ConvFusion Logo">
+</p>
 
-面向 Codex 的本地优先、证据驱动科研工作流插件。
+<h1 align="center">ConvFusion for Codex</h1>
+
+<p align="center"><strong>面向 Codex 的本地优先、证据驱动科研工作流插件</strong></p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/version-v0.2.0--codex.1-4a43ea" alt="Version 0.2.0-codex.1">
+  <img src="https://img.shields.io/badge/Codex-plugin-4a43ea" alt="Codex Plugin">
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-22c55e" alt="Apache-2.0 License"></a>
+</p>
+
+---
 
 ConvFusion 帮助研究者和开发者把研究计划、文献、证据、主张、决策、实验结果、论文修订和成果输出组织为可追溯的本地资产。Codex 继续负责推理、浏览、编码与实验执行；ConvFusion 提供科研方法和确定性的资产约束，不另外实现一套 Agent Runtime。
 
-> 当前版本：`0.3.0`。项目仍处于早期阶段，插件接口和工具参数可能继续演进，欢迎通过 Issue 和 Pull Request 参与改进。
+> 当前版本：`0.2.0-codex.1`。项目仍处于早期阶段，插件接口和工具参数可能继续演进，欢迎通过 Issue 和 Pull Request 参与改进。
 
 本项目由 [ConvFusion for DeepSeek Harness](https://github.com/ConvFusion/ConvFusion-dsh) 移植而来，保留了科研领域 Core，并使用 Codex Skill 与本地 STDIO MCP 替代 Cordis/DSH 宿主注册层。
 
@@ -169,6 +181,18 @@ npm run build
 
 ```bash
 npm run verify:codex
+```
+
+插件版本以 `plugins/convfusion-codex/package.json` 为唯一来源。发布新版本时，在仓库根目录执行：
+
+```bash
+npm --prefix plugins/convfusion-codex run version:set -- 0.2.0-codex.2
+```
+
+该命令会校验 SemVer，并同步插件清单、README 和现有 lockfile。可以单独检查版本标记是否一致：
+
+```bash
+npm --prefix plugins/convfusion-codex run version:check
 ```
 
 该验证会真实完成：
